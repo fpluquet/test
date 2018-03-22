@@ -9,7 +9,8 @@ layout: default
 
 {% assign AAs = site.data.AAs | where:"UE", UE[0]%}
 {% for AA in  AAs %}
-- {{AA.accronyme}} : {{AA.libelle}} (Profs :  {% for prof in AA.enseignants %} [{{prof}}]({{site.baseurl}}/personnels/{{prof | downcase}}.html){% if forloop.last == false %}, {% endif %}{% endfor %})
+{% assign: label = AA.accronyme | append: " : " | append: AA.libelle %}
+- {% include aaLink.html label=label aa=AA %} (Profs :  {% for prof in AA.enseignants %} [{{prof}}]({{site.baseurl}}/personnels/{{prof | downcase}}.html){% if forloop.last == false %}, {% endif %}{% endfor %})
 {% endfor %}
 
 {% endfor %}

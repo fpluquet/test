@@ -32,7 +32,8 @@ page_gen:
   - index_files: false
     data: "AAs"
     template: "AA"
-    name: "accronyme"
+    name: ["UE","accronyme"]
+    name_separator: "_"
     dir: "AA"
 # Build settings
 markdown: kramdown

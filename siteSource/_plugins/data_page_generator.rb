@@ -30,7 +30,7 @@ module Jekyll
     # - `name` is the key in `data` which determines the output filename
     # - `template` is the name of the template for generating the page
     # - `extension` is the extension for the generated file
-    def initialize(site, base, index_files, dir, data, name, template, extension)
+    def initialize(site, base, index_files, dir, data, name, name_separator, template, extension)
       @site = site
       @base = base
 
@@ -39,7 +39,19 @@ module Jekyll
       #
       # the value of these variables changes according to whether we
       # want to generate named folders or not
-      filename = sanitize_filename(data[name]).to_s
+      filename = ""
+      if(name.kind_of?(Array))
+        name.each do |x| 
+          if (filename != "")
+            filename = filename + name_separator
+          end
+          filename = filename + data[x]
+        end
+      else
+        filename = data[name]
+      end
+
+      filename = sanitize_filename(filename).to_s
       @dir = dir + (index_files ? "/" + filename + "/" : "")
       @name = (index_files ? "index" : filename) + "." + extension.to_s
 
@@ -73,6 +85,7 @@ module Jekyll
           index_files_for_this_data = data_spec['index_files'] != nil ? data_spec['index_files'] : index_files
           template = data_spec['template'] || data_spec['data']
           name = data_spec['name']
+          name_separator = data_spec['name_separator'] || ''
           dir = data_spec['dir'] || data_spec['data']
           extension = data_spec['extension'] || "html"
 
@@ -95,7 +108,7 @@ module Jekyll
             records = records.select { |record| eval(data_spec['filter_condition']) } if data_spec['filter_condition']
 
             records.each do |record|
-              site.pages << DataPage.new(site, site.source, index_files_for_this_data, dir, record, name, template, extension)
+              site.pages << DataPage.new(site, site.source, index_files_for_this_data, dir, record, name, name_separator, template, extension)
             end
           else
             puts "error. could not find template #{template}" if not site.layouts.key? template

@@ -12,7 +12,7 @@ layout: default
 {% for AA in AAs %}
   {% assign: label = AA.accronyme | append: ' - ' | append: AA.libelle %}
   {% assign: accronyme = AA.accronyme %}
-  <li>{%include aaLink.html accronyme=accronyme label=label %}</li>
+  <li>{%include aaLink.html aa=AA label=label %}</li>
 {% endfor %}
 </ul>
 {%endif%}

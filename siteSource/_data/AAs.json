@@ -12,6 +12,12 @@
     "enseignants": ["FPL"]
   },
   {
+    "accronyme": "INO",
+    "UE": "INT1",
+    "libelle": "Introduction à l'ordinateur",
+    "enseignants": ["ARO"]
+  },
+  {
     "accronyme": "JAV2",
     "UE": "DEV2",
     "libelle": "Java : théorie",
