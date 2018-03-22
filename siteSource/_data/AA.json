@@ -1,0 +1,26 @@
+[
+  {
+    "accronyme": "INL",
+    "UE": "INT1",
+    "libelle": "Introduction au logiciel",
+    "enseignants": ["FPL"]
+  },
+  {
+    "accronyme": "INI",
+    "UE": "INT1",
+    "libelle": "Introduction à l'informatique industrielle",
+    "enseignants": ["FPL"]
+  },
+  {
+    "accronyme": "JAV2",
+    "UE": "DEV2",
+    "libelle": "Java : théorie",
+    "enseignants": ["PBT"]
+  },
+  {
+    "accronyme": "JAVL2",
+    "UE": "DEV2",
+    "libelle": "Java : labo",
+    "enseignants": ["PBT", "FPL"]
+  }
+]

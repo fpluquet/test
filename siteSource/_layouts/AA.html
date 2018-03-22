@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<h1>{{ page.libelle }} ({{ page.accronyme }})</h1>
+
+Enseignants :  {% for prof in page.enseignants %} {% include profLink.html prof=prof %}{% if forloop.last == false %}, {% endif %}{% endfor %}
+
+{% assign: dataFile = '../AA/' | append: page.UE | append: '_' | append: page.accronyme | append: '.md' %}
+{% capture my_include %}{% include_absolute {{dataFile}} %}{% endcapture %}
+{{ my_include | markdownify }}
