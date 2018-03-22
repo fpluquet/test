@@ -4,7 +4,7 @@ layout: default
 <h1>{{ page.nom }} ({{ page.accronyme }})</h1>
 
 {% assign condition = "item.enseignants contains '" | append: page.accronyme | append: "'"%}
-{% assign AAs = site.data.AA | where_exp: "item", condition %}
+{% assign AAs = site.data.AAs | where_exp: "item", condition %}
 {% if AAs.size > 0 %}
 
 <h3>Cours donnés :</h3>

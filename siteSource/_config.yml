@@ -30,7 +30,7 @@ page_gen:
     name: "accronyme"
     dir: "personnels"
   - index_files: false
-    data: "AA"
+    data: "AAs"
     template: "AA"
     name: "accronyme"
     dir: "AA"
