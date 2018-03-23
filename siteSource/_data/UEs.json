@@ -1,10 +1,12 @@
-{
-  "INT1": {
+[
+  {
+    "accronyme": "INT1",
     "quadrimestre": "Q1",
     "libelle": "Cours d'introduction"
   },
-  "DEV2": {
+  {
+    "accronyme": "DEV2",
     "quadrimestre": "Q2",
     "libelle": "Développement 2"
   }
-}
+]
