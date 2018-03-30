@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+<meta charset="utf-8">
+<title>ESI</title>
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style.css"/>
+  <link rel="stylesheet" media="all" href="{{site.baseurl}}/css/font-awesome-4.6.3/css/font-awesome.min.css">
 </head>
 <body>
-  <a href="{{site.baseurl}}{% link index.md %}">Accueil</a>
+  {% include header.html %}
   {{ content }}
+  {% include footer.html %}
 </body>
 </html>

@@ -1,0 +1,6 @@
+Font: Sansation (Light and Bold)
+http://www.dafont.com/search.php?q=sansation
+
+Colors
+Dark blue #373288
+Ligth blue #6dc0d0

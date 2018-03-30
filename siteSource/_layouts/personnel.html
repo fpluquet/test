@@ -1,18 +1,25 @@
 ---
-layout: default
+layout: innerPage
 ---
 <h1>{{ page.nom }} ({{ page.accronyme }})</h1>
 
-{% assign condition = "item.enseignants contains '" | append: page.accronyme | append: "'"%}
-{% assign AAs = site.data.AAs | where_exp: "item", condition %}
-{% if AAs.size > 0 %}
+<article100>
+  <div class="info">
+    <h3>Contact</h3>
+    <p><i class="fa fa-envelope-o"></i>&nbsp;<a href="mailto:{{page.email}}">{{page.email}}</a></p>
 
-<h3>Cours donnés :</h3>
-<ul>
-{% for AA in AAs %}
-  {% assign: label = AA.accronyme | append: ' - ' | append: AA.libelle %}
-  {% assign: accronyme = AA.accronyme %}
-  <li>{%include aaLink.html aa=AA label=label %}</li>
-{% endfor %}
-</ul>
-{%endif%}
+    {% assign condition = "item.enseignants contains '" | append: page.accronyme | append: "'"%}
+    {% assign AAs = site.data.AAs | where_exp: "item", condition %}
+    {% if AAs.size > 0 %}
+
+    <h3>Cours enseignés</h3>
+    <ul>
+    {% for AA in AAs %}
+      {% assign: label = AA.accronyme | append: ' - ' | append: AA.libelle %}
+      {% assign: accronyme = AA.accronyme %}
+      <li>{%include aaLink.html aa=AA label=label %}</li>
+    {% endfor %}
+    </ul>
+    {%endif%}
+  </div>
+</article100>

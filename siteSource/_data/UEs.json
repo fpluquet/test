@@ -2,11 +2,13 @@
   {
     "accronyme": "INT1",
     "quadrimestre": "Q1",
+    "sections": ["G", "I", "R"],
     "libelle": "Cours d'introduction"
   },
   {
     "accronyme": "DEV2",
     "quadrimestre": "Q2",
+    "sections": ["G", "I", "R"],
     "libelle": "Développement 2"
   }
 ]

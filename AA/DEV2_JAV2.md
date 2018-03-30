@@ -1,5 +1,5 @@
-## Description du cours
+### Description du cours
 
 Cours de Java théorie
 
-## Prerequis
+### Prérequis
